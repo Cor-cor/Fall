@@ -41,7 +41,7 @@ class GameClass extends FlxGame
 	 * Override the base onResize function to center and stretch the game to fit the screen.
 	 * Called on Ctrl+F for Flash, and Alt-Enter for Windows.
 	 */
-	override public function onResize( ?E:Event ):Void
+	override public function onResize( _ ):Void
 	{
 		// Set the FlxCamera's default zoom to one that will fill the screen but maintain the proper ratio.
 		
@@ -57,6 +57,6 @@ class GameClass extends FlxGame
 		x = ( Lib.current.stage.stageWidth - ( FlxG.width * FlxG.camera.zoom ) ) / 2;
 		y = ( Lib.current.stage.stageHeight - ( FlxG.height * FlxG.camera.zoom ) ) / 2;
 		
-		super.onResize( E );
+		super.onResize( _ );
 	}
 }

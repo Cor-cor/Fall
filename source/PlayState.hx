@@ -52,7 +52,7 @@ class PlayState extends FlxState
 		FlxG.cameras.bgColor = 0xff000000;
 		// Show the mouse (in case it hasn't been disabled)
 		#if !FLX_NO_MOUSE
-		FlxG.mouse.hide();
+		FlxG.mouse.visible = false;
 		#end
 		
 		Reg.PS = this;
@@ -250,11 +250,11 @@ class PlayState extends FlxState
 			
 			if ( _crazyMode )
 			{
-				FlxTween.multiVar( _crazy, { alpha: 0.66 }, 0.5 );
+				FlxTween.tween( _crazy, { alpha: 0.66 }, 0.5 );
 			}
 			else
 			{
-				FlxTween.multiVar( _crazy, { alpha: 0 }, 0.5 );
+				FlxTween.tween( _crazy, { alpha: 0 }, 0.5 );
 			}
 		}
 		

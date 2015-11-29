@@ -22,12 +22,12 @@ class Ghost extends FlxSprite
 		velocity.x = FlxRandom.floatRanged( -20, 20 );
 		velocity.y = FlxRandom.floatRanged( -32, -24 );
 		
-		FlxTween.multiVar( this, { alpha: 1 }, FlxRandom.floatRanged( 0.2, 1 ), { complete: fadedIn } );
+		FlxTween.tween( this, { alpha: 1 }, FlxRandom.floatRanged( 0.2, 1 ), { complete: fadedIn } );
 	}
 	
 	private function fadedIn( f:FlxTween ):Void
 	{
-		FlxTween.multiVar( this, { alpha: 0 }, FlxRandom.floatRanged( 0.2, 1 ), { complete: fadedOut } );
+		FlxTween.tween( this, { alpha: 0 }, FlxRandom.floatRanged( 0.2, 1 ), { complete: fadedOut } );
 	}
 	
 	private function fadedOut( f:FlxTween ):Void
