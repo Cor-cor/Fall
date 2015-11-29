@@ -8,29 +8,29 @@ import flixel.util.FlxRandom;
 
 class Ghost extends FlxSprite
 {
-	public function new( X:Int = 0, Y:Int = 0 )
+	public function new(x:Int = 0, y:Int = 0)
 	{
-		super( X, Y, "images/ghost.png" );
-		init( X, Y );
+		super(x, y, "images/ghost.png");
+		init(x, y);
 	}
 	
-	public function init( X:Int, Y:Int ):Void
+	public function init(x:Int, y:Int):Void
 	{
-		super.reset( X, Y );
+		super.reset(x, y);
 		
 		alpha = 0;
-		velocity.x = FlxRandom.floatRanged( -20, 20 );
-		velocity.y = FlxRandom.floatRanged( -32, -24 );
+		velocity.x = FlxRandom.floatRanged(-20, 20);
+		velocity.y = FlxRandom.floatRanged(-32, -24);
 		
-		FlxTween.tween( this, { alpha: 1 }, FlxRandom.floatRanged( 0.2, 1 ), { complete: fadedIn } );
+		FlxTween.tween(this, { alpha: 1 }, FlxRandom.floatRanged(0.2, 1), { complete: fadedIn });
 	}
 	
-	private function fadedIn( f:FlxTween ):Void
+	private function fadedIn(f:FlxTween):Void
 	{
-		FlxTween.tween( this, { alpha: 0 }, FlxRandom.floatRanged( 0.2, 1 ), { complete: fadedOut } );
+		FlxTween.tween(this, { alpha: 0 }, FlxRandom.floatRanged(0.2, 1), { complete: fadedOut });
 	}
 	
-	private function fadedOut( f:FlxTween ):Void
+	private function fadedOut(f:FlxTween):Void
 	{
 		kill();
 	}

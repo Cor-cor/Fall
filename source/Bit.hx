@@ -14,39 +14,39 @@ class Bit extends FlxSprite
 	 * This is a generic sprite class extended by Branch, Leaf, and Wisp, since they share so many functions in common.
 	 * Always 1px by 1px.
 	 * 
-	 * @param	X
-	 * @param	Y
-	 * @param	Weight
-	 * @param	Color
+	 * @param	x
+	 * @param	y
+	 * @param	weight
+	 * @param	color
 	 */
-	public function new( X:Int, Y:Int, Weight:Int, Color:Int )
+	public function new(x:Int, y:Int, weight:Int, color:Int)
 	{
-		super( X, Y );
-		makeGraphic( 1, 1, Color );
-		_weight = Weight;
+		super(x, y);
+		makeGraphic(1, 1, color);
+		_weight = weight;
 		_absVel = new FlxPoint();
-		reset( X, Y );
+		reset(x, y);
 	}
 	
 	/**
 	 * Resets this bit, and updates the initial point. Used for recycling.
 	 * 
-	 * @param	X
-	 * @param	Y
+	 * @param	x
+	 * @param	y
 	 */
-	override public function reset( X:Float, Y:Float )
+	override public function reset(x:Float, y:Float)
 	{
-		super.reset( X, Y );
-		_initialPoint = new FlxPoint( X, Y );
+		super.reset(x, y);
+		_initialPoint = new FlxPoint(x, y);
 	}
 	
 	/**
 	 * Overridden.
 	 * Attempts to move this bit. Branches can move a little, leaves can move and fall, and wisps move a lot.
 	 * 
-	 * @param	Force
+	 * @param	force
 	 */
-	public function push( Force:Float )
+	public function push(force:Float)
 	{
 		
 	}
@@ -68,8 +68,8 @@ class Bit extends FlxSprite
 	
 	private function get_absVelocity():FlxPoint
 	{
-		_absVel.x = ( velocity.x < 0 ) ? velocity.x * -1 : velocity.x;
-		_absVel.y = ( velocity.y < 0 ) ? velocity.y * -1 : velocity.y;
+		_absVel.x = (velocity.x < 0) ? velocity.x * -1 : velocity.x;
+		_absVel.y = (velocity.y < 0) ? velocity.y * -1 : velocity.y;
 		
 		return _absVel;
 	}
@@ -81,6 +81,6 @@ class Bit extends FlxSprite
 	
 	private function get_direction():Int
 	{
-		return ( velocity.x < 0 ) ? -1 : 1;
+		return (velocity.x < 0) ? -1 : 1;
 	}
 }

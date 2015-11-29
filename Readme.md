@@ -1,6 +1,6 @@
-# ![HaxeFlixel Demo](../../Assets/haxeflixel-demos_32px.png) Fall
+# Fall
 
-Based on the original [Fall demo](https://github.com/SeiferTim/Flixel-Showcase--Fall) by [SeiferTim](https://github.com/SeiferTim) (which you can see [here](http://www.tims-world.com/exp.php#)), updated for the latest [HaxeFlixel](https://github.com/haxeflixel) release.
+Based on the original [Fall demo](https://github.com/SeiferTim/Flixel-Showcase--Fall) by [SeiferTim](https://github.com/SeiferTim), updated for the latest [HaxeFlixel](https://github.com/haxeflixel) release.
 
 <p align="center">
 <img src="assets/screenshot.png" alt="Screenshot"/>

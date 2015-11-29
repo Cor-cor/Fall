@@ -9,23 +9,23 @@ class Branch extends Bit
 	/**
 	 * A "branch" is a 1px by 1px part of a tree.
 	 * 
-	 * @param	X		The X position for this "branch".
-	 * @param	Y		The Y position for this "branch".
-	 * @param	Weight	The weight of this "branch". Assigned in the PlayState; trunk branches are much heavier.
+	 * @param	x		The x position for this "branch".
+	 * @param	x		The y position for this "branch".
+	 * @param	weight	The weight of this "branch". Assigned in the PlayState; trunk branches are much heavier.
 	 */
-	public function new( X:Int, Y:Int, Weight:Int )
+	public function new(x:Int, y:Int, weight:Int)
 	{
-		super( X, Y, Weight, FlxColor.BLACK );
+		super(x, y, weight, FlxColor.BLACK);
 		solid = true;
 		moves = true;
 		immovable = false;
 	}
 	
-	override public function push( Force:Float ):Void
+	override public function push(force:Float):Void
 	{
-		if ( Force > _weight && FlxRandom.chanceRoll( 10 ) )
+		if (force > _weight && FlxRandom.chanceRoll(10))
 		{
-			x = ( _initialPoint.x + 2 ) * velocity.x;
+			x = (_initialPoint.x + 2) * velocity.x;
 		}
 		else
 		{

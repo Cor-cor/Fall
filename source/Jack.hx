@@ -6,21 +6,21 @@ import flixel.util.FlxRandom;
 
 class Jack extends FlxSprite
 {
-	public function new( X:Int, Y:Int )
+	public function new(x:Int, y:Int)
 	{
-		super( X, Y, "images/jack.png" );
-		init( X, Y );
+		super(x, y, "images/jack.png");
+		init(x, y);
 	}
 	
-	public function init( X:Int, Y:Int )
+	public function init(x:Int, y:Int)
 	{
-		super.reset( X, Y );
+		super.reset(x, y);
 		
 		acceleration.y = 80;
 		
-		velocity.x = FlxRandom.intRanged( 20, 60 );
+		velocity.x = FlxRandom.intRanged(20, 60);
 		
-		if ( x >= 0 )
+		if (this.x >= 0)
 		{
 			velocity.x *= -1;
 		}
@@ -28,7 +28,7 @@ class Jack extends FlxSprite
 	
 	override public function update():Void
 	{
-		if ( y > FlxG.height )
+		if (y > FlxG.height)
 		{
 			kill();
 		}
